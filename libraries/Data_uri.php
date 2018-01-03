@@ -10,7 +10,7 @@ class data_uri {
 	public $file_types = [];
 
 	public function __construct() {
-		$this->public_root = WWW;		
+		$this->public_root = WWW;
 	}
 
 	public function public_folder($public_folder) {
@@ -61,7 +61,7 @@ class data_uri {
 		if ($just_path) {
 			$this->just_path = $just_path;
 		}
-		
+
 		/* have any file types been assigned yet? */
 		if (!count($this->file_types)) {
 			/* no - let's use the image defaults */

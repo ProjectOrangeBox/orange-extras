@@ -13,7 +13,7 @@
 class Filter_strip_tags extends Filter_base {
 	public function filter(&$field, $options) {
 		$allowable_tags = (!empty($options)) ? $options : '';
-	
+
 		$field = strip_tags($field, $allowable_tags);
 	}
 } /* end class */

@@ -13,7 +13,7 @@
 class Validate_is_closure extends Validate_base {
 	public function validate(&$field, $options) {
 		$this->error_string = '%s is not a closure.';
-	
+
 		return is_object($field) && ($field instanceof Closure);
 	}
 } /* end class */

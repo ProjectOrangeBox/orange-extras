@@ -13,7 +13,7 @@
 class Validate_is_json_str extends Validate_base {
 	public function validate(&$field, $options) {
 		$this->error_string = '%s is not a json string.';
-		
+
 		if (is_string($field)) {
 			$json = json_decode($field, TRUE);
 			return ($json !== NULL AND $field != $json);
