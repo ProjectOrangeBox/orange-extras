@@ -56,8 +56,6 @@ class data_uri {
 
 	/* used by the filter */
 	public function extract_data_img(&$html,$just_path=null) {
-    log_message('debug', 'data_uri::extract_data_img()');
-
 		if ($just_path) {
 			$this->just_path = $just_path;
 		}
