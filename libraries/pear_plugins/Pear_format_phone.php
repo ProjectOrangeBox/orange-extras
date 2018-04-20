@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Pear_format_phone extends Pear_plugin {
 
