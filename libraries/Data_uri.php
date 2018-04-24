@@ -10,7 +10,7 @@ class data_uri {
 	public $file_types = [];
 
 	public function __construct() {
-		$this->public_root = WWW;
+		$this->public_root = site_url('{www}');
 	}
 
 	public function public_folder($public_folder) {
