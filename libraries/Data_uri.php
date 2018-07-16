@@ -1,6 +1,6 @@
 <?php
 
-class data_uri {
+class Data_uri {
 	public $public_root;
 	public $public_folder = '';
 	public $just_path = false;
