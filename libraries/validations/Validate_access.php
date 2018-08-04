@@ -11,11 +11,11 @@
  *
  */
 class Validate_access extends Validate_base {
-	/* access['edit::monkeys'] translates to user::can('edit::monkeys')  */
+	/* access['edit::monkeys'] translates to user can('edit::monkeys')  */
 	public function validate(&$field, $options) {
 		$this->error_string = 'You do not have access to %s';
 
 		/* get the current user data */
-		return (is_object(ci()->user)) ? ci()->user->can($options) : false;
+		return (is_object(ci()->user)) ? ci('user')->can($options) : false;
 	}
 } /* end class */
