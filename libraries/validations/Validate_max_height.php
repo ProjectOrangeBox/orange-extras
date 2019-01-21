@@ -14,9 +14,7 @@ class Validate_max_height extends Validate_base {
 	public function validate(&$field, $options) {
 		$this->error_string = 'Height is greater than %s.';
 
-		if (!file_exists($field)) {
-			$this->error_string = 'File Not Found.';
-
+		if (!$file = $this->locate_file($field)) {
 			return false;
 		}
 
@@ -24,7 +22,7 @@ class Validate_max_height extends Validate_base {
 			throw new Exception('Get Image Size Function Not Supported');
 		}
 
-		$size = getimagesize($field);
+		$size = getimagesize($file);
 
 		return (bool) ($size[1] <= $options);
 	}

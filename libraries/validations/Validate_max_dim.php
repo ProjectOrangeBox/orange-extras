@@ -12,12 +12,10 @@
  */
 class Validate_max_dim extends Validate_base {
 	public function validate(&$field, $options) {
-		$dim                = explode(',', $options);
+		$dim = explode(',', $options);
 		$this->error_string = 'The width & height cannot be greater than ' . $dim[0] . 'x' . $dim[1];
 
-		if (!file_exists($field)) {
-			$this->error_string = 'File Not Found.';
-
+		if (!$file = $this->locate_file($field)) {
 			return false;
 		}
 

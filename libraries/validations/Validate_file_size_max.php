@@ -14,13 +14,11 @@ class Validate_file_size_max extends Validate_base {
 	public function validate(&$field, $options) {
 		$this->error_string = 'File %s size is greater than ' . $options . ' bytes';
 
-		if (!file_exists($field)) {
-			$this->error_string = 'File Not Found.';
-
+		if (!$file = $this->locate_file($field)) {
 			return false;
 		}
 
-		$size = filesize($field);
+		$size = filesize($file);
 
 		return (bool) ($size > $options);
 	}

@@ -12,19 +12,18 @@
  */
 class Validate_height extends Validate_base {
 	public function filter(&$field, $options) {
-		$success = false;
-		$file    = WWW . $this->field_data[$options];
+		$this->error_string = 'File %s height is is not %s.';
 
-		if (file_exists($file)) {
-			if (!function_exists('getimagesize')) {
-				throw new Exception('Get Image Size Function Not Supported');
-			}
-
-			$size    = getimagesize($file);
-			$field   = $size[1];
-			$success = true;
+		if (!$file = $this->locate_file($field)) {
+			return false;
 		}
 
-		return $success;
+		if (!function_exists('getimagesize')) {
+			throw new Exception('Get Image Size Function Not Supported');
+		}
+			
+		$size = getimagesize($file);
+
+		return (bool) ($size[1] == $options);
 	}
 } /* end class */

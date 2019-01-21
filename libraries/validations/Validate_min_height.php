@@ -14,9 +14,7 @@ class Validate_min_height extends Validate_base {
 	public function validate(&$field, $options) {
 		$this->error_string = 'Height is less than %s.';
 
-		if (!file_exists($field)) {
-			$this->error_string = 'File Not Found.';
-
+		if (!$file = $this->locate_file($field)) {
 			return false;
 		}
 

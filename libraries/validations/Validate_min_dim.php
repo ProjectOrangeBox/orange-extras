@@ -15,14 +15,8 @@ class Validate_min_dim extends Validate_base {
 		$dim                = explode(',', $options);
 		$this->error_string = 'The width & height cannot be less than ' . $dim[0] . 'x' . $dim[1];
 
-		if (!file_exists($field)) {
-			$this->error_string = 'File Not Found.';
-
+		if (!$file = $this->locate_file($field)) {
 			return false;
-		}
-
-		if (!function_exists('getimagesize')) {
-			throw new Exception('Get Image Size Function Not Supported');
 		}
 
 		$size = getimagesize($field);

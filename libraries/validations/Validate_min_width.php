@@ -14,9 +14,7 @@ class Validate_min_width extends Validate_base {
 	public function validate(&$field, $options) {
 		$this->error_string = 'Width is less than %s.';
 
-		if (!file_exists($field)) {
-			$this->error_string = 'File Not Found.';
-
+		if (!$file = $this->locate_file($field)) {
 			return false;
 		}
 

@@ -14,12 +14,10 @@ class Validate_is_image_file extends Validate_base {
 	public function validate(&$field, $options) {
 		$this->error_string = '%s is not a valid file.';
 
-		if (!file_exists($field)) {
-			$this->error_string = 'File Not Found.';
-
+		if (!$file = $this->locate_file($field)) {
 			return false;
 		}
 
-		return (bool) (preg_match("/(.)+\\.(jp(e) {0,1}g$|gif$|png$)/i", $field));
+		return (bool) (preg_match("/(.)+\\.(jp(e) {0,1}g$|gif$|png$)/i", $file));
 	}
 } /* end class */
