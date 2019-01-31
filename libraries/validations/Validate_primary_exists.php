@@ -11,7 +11,8 @@
  *
  */
 class Validate_primary_exists extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		/* little assumption here $this->database is loaded */
 		/* $options = model name */
 		$this->error_string = '%s that you requested is unavailable.';

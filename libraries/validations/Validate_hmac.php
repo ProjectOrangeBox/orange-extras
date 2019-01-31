@@ -11,7 +11,8 @@
  *
  */
 class Validate_hmac extends Validate_base {
-	public function filter(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$success = true;
 
 		/* if it dosn't start with out HMAC prefix then just return TRUE and don't modify it */

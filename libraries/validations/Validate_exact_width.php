@@ -11,15 +11,16 @@
  *
  */
 class Validate_exact_width extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
+		if (!function_exists('getimagesize')) {
+			throw new Exception('Get Image Size Function Not Supported');
+		}
+
 		$this->error_string = 'Width must be %s.';
 
 		if (!$file = $this->locate_file($field)) {
 			return false;
-		}
-
-		if (!function_exists('getimagesize')) {
-			throw new Exception('Get Image Size Function Not Supported');
 		}
 
 		$size = getimagesize($file);

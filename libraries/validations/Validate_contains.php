@@ -11,9 +11,17 @@
  *
  */
 class Validate_contains extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s must contain ' . $options;
-
+		
+		/* you didn't provide anything? */
+		if (empty($options)) {
+			$this->error_string = '%s must contain option is empty';
+			
+			return false;
+		}
+		
 		return (bool) (strpos($field, $options) !== false) ? true : false;
 	}
 } /* end class */

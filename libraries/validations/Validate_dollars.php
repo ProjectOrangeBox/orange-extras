@@ -11,7 +11,8 @@
  *
  */
 class Validate_dollars extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is Out of Range.';
 
 		return (bool) preg_match('#^\$?\d+(\.(\d{2}))?$#', $field);

@@ -12,7 +12,12 @@
  */
 class Validate_image_ratio extends Validate_base {
 	/* options can be a number or a string like 4:3,16:9 */
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
+		if (!function_exists('getimagesize')) {
+			throw new Exception('Get Image Size Function Not Supported');
+		}
+
 		$this->error_string = '%s does must have a ratio (width/height) of ' . $options . '.';
 
 		if (strpos($options, ':') === false) {
@@ -27,10 +32,6 @@ class Validate_image_ratio extends Validate_base {
 		
 		$ratio = $width / $height;
 		
-		if (!function_exists('getimagesize')) {
-			throw new Exception('Get Image Size Function Not Supported');
-		}
-
 		if (!$file = $this->locate_file($field)) {
 			return false;
 		}

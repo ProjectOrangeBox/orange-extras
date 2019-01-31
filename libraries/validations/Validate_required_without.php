@@ -11,10 +11,11 @@
  *
  */
 class Validate_required_without extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is required.';
 
-		$with          = $this->field_data[$options];
+		$with = $this->field_data[$options];
 		$with_filledin = is_array($with) ? (bool) count($with) : (trim($with) !== '');
 
 		/* if it's filled in then it's not required */

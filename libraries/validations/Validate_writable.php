@@ -11,7 +11,8 @@
  *
  */
 class Validate_writable extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is not a writable.';
 
 		return (is_string($field) && is_writable($field));

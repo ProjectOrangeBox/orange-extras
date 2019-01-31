@@ -11,7 +11,8 @@
  *
  */
 class Validate_valid_date extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is a invalid date.';
 
 		if (empty($field)) {

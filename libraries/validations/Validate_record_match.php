@@ -11,7 +11,8 @@
  *
  */
 class Validate_record_match extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		/* record_match[model name.column 1.value 1.column 2.value 2] */
 		$this->error_string = 'You don\'t has access to this record.';
 

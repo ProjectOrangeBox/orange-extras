@@ -11,11 +11,14 @@
  *
  */
 class Filter_array_explode extends Filter_base {
-	public function filter(&$field, $options) {
+
+	public function filter(&$field,string $options = '') : void
+	{
 		$options = ($options) ? $options : ' ';
 
 		if (is_string($field)) {
 			$field = explode($options, $field);
 		}
 	}
+
 } /* end class */

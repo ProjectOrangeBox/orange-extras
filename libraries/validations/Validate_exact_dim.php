@@ -11,17 +11,18 @@
  *
  */
 class Validate_exact_dim extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
+		if (!function_exists('getimagesize')) {
+			throw new Exception('Get Image Size Function Not Supported');
+		}
+
 		/* need this for the message */
 		$dim = explode(',', $options);
 		$this->error_string = 'The width & height must be ' . $dim[0] . 'x' . $dim[1];
 
 		if (!$file = $this->locate_file($field)) {
 			return false;
-		}
-
-		if (!function_exists('getimagesize')) {
-			throw new Exception('Get Image Size Function Not Supported');
 		}
 
 		$size = getimagesize($file);

@@ -1,9 +1,18 @@
 <?php
-/*
-Pear::mask_string('1234567812345678', '************0000') ************5678
-Pear::mask_string('1234567812345678', '**** **** **** 0000') **** **** **** 5678
-Pear::mask_string('1234567812345678', '**** - **** - **** - 0000', ' -') **** - **** - **** - 5678
-*/
+/**
+ * Orange Framework validation rule
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * @package	CodeIgniter / Orange
+ * @author	Don Myers
+ * @license http://opensource.org/licenses/MIT MIT License
+ * @link	https://github.com/ProjectOrangeBox
+ * @help Pear::mask_string('1234567812345678', '************0000') ************5678
+ * @help Pear::mask_string('1234567812345678', '**** **** **** 0000') **** **** **** 5678
+ * @help Pear::mask_string('1234567812345678', '**** - **** - **** - 0000', ' -') **** - **** - **** - 5678
+ *
+ */
 class Pear_mask_string extends Pear_plugin {
 
 	public function render($string=null,$format=null,$ignore=' ') {

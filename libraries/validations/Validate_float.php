@@ -11,7 +11,8 @@
  *
  */
 class Validate_float extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is not a floating number.';
 
 		return (bool) filter_var($field, FILTER_VALIDATE_FLOAT) || (string) $field === '0';

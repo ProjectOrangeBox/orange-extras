@@ -11,7 +11,8 @@
  *
  */
 class Filter_xss_clean extends Filter_base {
-	public function filter(&$field, $options) {
+	public function filter(&$field,string $options = '') : void
+	{
 		$field = ci()->security->xss_clean($field);
 	}
 } /* end class */

@@ -11,7 +11,8 @@
  *
  */
 class Filter_strip_image_tags extends Filter_base {
-	public function filter(&$field, $options) {
+	public function filter(&$field,string $options = '') : void
+	{
 		$field = ci()->security->strip_image_tags($field);
 	}
 } /* end class */

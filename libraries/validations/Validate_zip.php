@@ -11,7 +11,8 @@
  *
  */
 class Validate_zip extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is invalid.';
 
 		return (bool) preg_match('#^\d{5}$|^\d{5}-\d{4}$#', $field);

@@ -11,7 +11,8 @@
  *
  */
 class Validate_is_outside extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		list($lo, $hi) = explode(',', $options, 2);
 
 		$this->error_string = '%s must not be between ' . $lo . ' &amp; ' . $hi;

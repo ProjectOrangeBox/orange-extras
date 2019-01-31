@@ -11,7 +11,8 @@
  *
  */
 class Validate_slug extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is an invalid slug';
 
 		return (bool) (preg_match("#^[0-9a-z_*-]+$#", $field));

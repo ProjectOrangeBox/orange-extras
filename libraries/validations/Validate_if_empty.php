@@ -18,7 +18,8 @@ class Validate_if_empty extends Validate_base {
 	if_empty[user(name)] - user name
 	if_empty[#foobar] - if empty put the value foobar in there
 	 */
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		if (trim($field) === '' || $field === null) {
 			/* save a copy for later */
 			$replace = $options;

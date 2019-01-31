@@ -11,7 +11,8 @@
  *
  */
 class Filter_strip_tags extends Filter_base {
-	public function filter(&$field, $options) {
+	public function filter(&$field,string $options = '') : void
+	{
 		$allowable_tags = (!empty($options)) ? $options : '';
 
 		$field = strip_tags($field, $allowable_tags);

@@ -11,7 +11,8 @@
  *
  */
 class Validate_valid_time extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is a invalid time.';
 
 		return (bool) (strtotime($field) > 1);

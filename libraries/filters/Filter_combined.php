@@ -11,10 +11,11 @@
  *
  */
 class Filter_combined extends Filter_base {
-	/*
-	combined[{fielda},{fieldb},::,{fieldc}]
+	/**
+	 * combined[{fielda},{fieldb},::,{fieldc}]
 	 */
-	public function filter(&$field, $options) {
+	public function filter(&$field,string $options = '') : void
+	{
 		$fields = explode(',', $options);
 
 		foreach ($fields as $f) {

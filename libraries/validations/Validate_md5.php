@@ -11,7 +11,8 @@
  *
  */
 class Validate_md5 extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$options            = ($options) ? $options : 32;
 		$this->error_string = '%s is not a valid hash.';
 

@@ -11,7 +11,8 @@
  *
  */
 class Validate_hexcolor extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is not a hex value.';
 
 		return (bool) preg_match('/^#?[a-fA-F0-9]{3,6}$/', $field);

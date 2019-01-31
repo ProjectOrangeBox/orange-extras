@@ -11,7 +11,8 @@
  *
  */
 class Filter_md5 extends Filter_base {
-	public function filter(&$field, $options) {
+	public function filter(&$field,string $options = '') : void
+	{
 		$field = md5($field);
 	}
 } /* end class */

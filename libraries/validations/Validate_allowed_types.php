@@ -11,7 +11,8 @@
  *
  */
 class Validate_allowed_types extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s must contain one of the allowed file extensions.';
 
 		/* allowed_type[png,gif,jpg,jpeg] */

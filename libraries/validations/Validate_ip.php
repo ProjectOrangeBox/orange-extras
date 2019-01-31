@@ -11,7 +11,8 @@
  *
  */
 class Validate_ip extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		/* *.*.*.*,10.1.1.*,10.*.*.*,etc... */
 		$this->error_string = '%s is a invalid ip.';
 

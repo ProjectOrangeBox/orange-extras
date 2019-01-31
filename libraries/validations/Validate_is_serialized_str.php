@@ -11,7 +11,8 @@
  *
  */
 class Validate_is_serialized_str extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s must be a serialized string.';
 
 		if (!is_string($field)) {
@@ -29,20 +30,20 @@ class Validate_is_serialized_str extends Validate_base {
 		}
 
 		switch ($badions[1]):
-	case 'a':
-	case 'O':
-	case 's':
-		if (preg_match("/^{$badions[1]}:[0-9]+:.*[;}]\$/s", $field)) {
-			return true;
-		}
-		break;
-	case 'b':
-	case 'i':
-	case 'd':
-		if (preg_match("/^{$badions[1]}:[0-9.E-]+;\$/", $field)) {
-			return true;
-		}
-		break;
+			case 'a':
+			case 'O':
+			case 's':
+				if (preg_match("/^{$badions[1]}:[0-9]+:.*[;}]\$/s", $field)) {
+					return true;
+				}
+			break;
+			case 'b':
+			case 'i':
+			case 'd':
+				if (preg_match("/^{$badions[1]}:[0-9.E-]+;\$/", $field)) {
+					return true;
+				}
+			break;
 		endswitch;
 
 		return false;

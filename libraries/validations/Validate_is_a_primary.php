@@ -11,7 +11,8 @@
  *
  */
 class Validate_is_a_primary extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is not a primary id.';
 
 		$field = trim($field);

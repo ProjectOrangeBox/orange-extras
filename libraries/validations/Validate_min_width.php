@@ -11,18 +11,19 @@
  *
  */
 class Validate_min_width extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
+		if (!function_exists('getimagesize')) {
+			throw new Exception('Get Image Size Function Not Supported');
+		}
+
 		$this->error_string = 'Width is less than %s.';
 
 		if (!$file = $this->locate_file($field)) {
 			return false;
 		}
 
-		if (!function_exists('getimagesize')) {
-			throw new Exception('Get Image Size Function Not Supported');
-		}
-
-		$size = getimagesize($field);
+		$size = getimagesize($file);
 
 		return (bool) ($size[0] <= $options);
 	}

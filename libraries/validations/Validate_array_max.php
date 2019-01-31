@@ -11,7 +11,8 @@
  *
  */
 class Validate_array_max extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		if (!is_numeric($options)) {
 			return false;
 		}

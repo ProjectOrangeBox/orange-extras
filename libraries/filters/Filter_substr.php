@@ -11,10 +11,15 @@
  *
  */
 class Filter_substr extends Filter_base {
-	/* copy[field] */
-	public function filter(&$field, $options) {
-		list($a, $b) = explode($options, 2);
+	/**
+	 * copy[field]
+	 */
+	public function filter(&$field,string $options = '') : void
+	{
+		if (!empty($options)) {
+			list($a, $b) = explode($options, 2);
 
-		$field = substr($field, $a, $b);
+			$field = substr($field, $a, $b);
+		}
 	}
 } /* end class */

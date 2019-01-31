@@ -11,11 +11,14 @@
  *
  */
 class Filter_array_implode extends Filter_base {
-	public function filter(&$field, $options) {
+	
+	public function filter(&$field,string $options = '') : void
+	{
 		$options = ($options) ? $options : ' ';
 
 		if (is_array($field)) {
 			$field = implode($options, $field);
 		}
 	}
+
 } /* end class */

@@ -11,7 +11,8 @@
  *
  */
 class Validate_array_count extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s should contain ' . $options . ' items.';
 
 		if (!is_numeric($options)) {

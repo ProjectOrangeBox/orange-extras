@@ -12,7 +12,8 @@
  */
 class Validate_is_uniquem extends Validate_base {
 
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		/* is_uniquem[model_name.column_name.$_POST[primary_key]] */
 		$this->error_string = '%s is already being used.';
 

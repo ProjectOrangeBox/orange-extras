@@ -11,7 +11,8 @@
  *
  */
 class Validate_is_between_dates extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		list($after, $before) = explode(',', $options);
 		$this->error_string   = '%s must be between ' . date('F j,Y', strtotime($after)) . ' and ' . date('F j,Y', strtotime($before)) . '.';
 

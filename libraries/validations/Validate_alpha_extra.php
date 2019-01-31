@@ -11,7 +11,8 @@
  *
  */
 class Validate_alpha_extra extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		// Alpha-numeric with periods,underscores,spaces and dashes
 		$this->error_string = '%s may only contain alpha-numeric characters,spaces,periods,underscores,and dashes.';
 

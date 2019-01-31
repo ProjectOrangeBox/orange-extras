@@ -11,10 +11,16 @@
  *
  */
 class Validate_matches_pattern extends Validate_base {
-	public function validate(&$field, $options) {
-		$pattern            = ($options) ? $options : '';
+	public function validate(&$field, string $options = '') : bool
+	{
+		if (empty($options)) {
+			$this->error_string = '%s pattern match option is empty.';
+		
+			return false;
+		}
+		
 		$this->error_string = '%s does not match the required pattern.';
 
-		return (bool) preg_match($pattern, $field);
+		return (bool)preg_match($options, $field);
 	}
 } /* end class */

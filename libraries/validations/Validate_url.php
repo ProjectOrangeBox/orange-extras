@@ -11,7 +11,8 @@
  *
  */
 class Validate_url extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is a invalid url.';
 
 		return (bool) (preg_match('#^([\.\/-a-z0-9_*-])+$#i', $field));

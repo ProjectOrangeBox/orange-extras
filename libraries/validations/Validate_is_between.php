@@ -12,7 +12,8 @@
  */
 class Validate_is_between extends Validate_base {
 	/* is_between[1,100] */
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		list($lo, $hi)      = explode(',', $options, 2);
 		$this->error_string = '%s must be between ' . $lo . ' &amp; ' . $hi;
 

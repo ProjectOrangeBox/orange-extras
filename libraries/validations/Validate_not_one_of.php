@@ -11,7 +11,8 @@
  *
  */
 class Validate_not_one_of extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		// not_in_list[1,2,3,4]
 		$types              = ($options) ? $options : '';
 		$this->error_string = '%s must not contain one of the available selections.';

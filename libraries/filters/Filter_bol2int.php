@@ -11,7 +11,10 @@
  *
  */
 class Filter_bol2int extends Filter_base {
-	public function filter(&$field, $options) {
+	
+	public function filter(&$field,string $options = '') : void
+	{
 		$field = (in_array(strtolower($field), $this->true_array, true)) ? 1 : 0;
 	}
+
 } /* end class */

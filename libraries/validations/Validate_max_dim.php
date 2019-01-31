@@ -11,7 +11,12 @@
  *
  */
 class Validate_max_dim extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
+		if (!function_exists('getimagesize')) {
+			throw new Exception('Get Image Size Function Not Supported');
+		}
+
 		$dim = explode(',', $options);
 		$this->error_string = 'The width & height cannot be greater than ' . $dim[0] . 'x' . $dim[1];
 
@@ -19,11 +24,7 @@ class Validate_max_dim extends Validate_base {
 			return false;
 		}
 
-		if (!function_exists('getimagesize')) {
-			throw new Exception('Get Image Size Function Not Supported');
-		}
-
-		$size = getimagesize($field);
+		$size = getimagesize($file);
 
 		return (bool) ($size[0] < $dim[0] && $size[1] < $dim[1]);
 	}

@@ -11,7 +11,8 @@
  *
  */
 class Filter_url extends Filter_base {
-	public function filter(&$field, $options) {
+	public function filter(&$field,string $options = '') : void
+	{
 		if ($field === 'http://' or $field === '') {
 			$field = '';
 		}

@@ -11,7 +11,8 @@
  *
  */
 class Validate_is_closure extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is not a closure.';
 
 		return is_object($field) && ($field instanceof Closure);

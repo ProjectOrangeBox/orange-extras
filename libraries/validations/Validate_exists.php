@@ -11,7 +11,8 @@
  *
  */
 class Validate_exists extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		/* exists[model_name.column] */
 		$this->error_string = '%s that you requested already exists.';
 

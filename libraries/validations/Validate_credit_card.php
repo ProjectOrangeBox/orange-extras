@@ -11,7 +11,8 @@
  *
  */
 class Validate_credit_card extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is not a valid credit card number.';
 
 		$cards = array(

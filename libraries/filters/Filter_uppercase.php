@@ -11,7 +11,8 @@
  *
  */
 class Filter_uppercase extends Filter_base {
-	public function filter(&$field, $options) {
+	public function filter(&$field,string $options = '') : void
+	{
 		$field = strtoupper($field);
 
 		/* options is max length */

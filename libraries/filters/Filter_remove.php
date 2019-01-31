@@ -11,7 +11,8 @@
  *
  */
 class Filter_remove extends Filter_base {
-	public function filter(&$field, $options) {
+	public function filter(&$field,string $options = '') : void
+	{
 		$field = str_replace(str_split($options), '', $field);
 	}
 } /* end class */

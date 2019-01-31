@@ -11,7 +11,8 @@
  *
  */
 class Validate_percent extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s Out of Range.';
 
 		return (bool) preg_match('#^\s*(\d{0,2})(\.?(\d*))?\s*\%?$#', $field);

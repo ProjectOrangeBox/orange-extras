@@ -11,7 +11,8 @@
  *
  */
 class Validate_file_size_min extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = 'File %s size is less than ' . $options . ' bytes';
 
 		if (!$file = $this->locate_file($field)) {

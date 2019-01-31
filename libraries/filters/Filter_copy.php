@@ -12,7 +12,8 @@
  */
 class Filter_copy extends Filter_base {
 	/* copy[field] */
-	public function filter(&$field, $options) {
+	public function filter(&$field,string $options = '') : void
+	{
 		$field = $this->field_data[$options];
 	}
 } /* end class */

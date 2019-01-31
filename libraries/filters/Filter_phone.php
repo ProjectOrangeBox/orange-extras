@@ -11,7 +11,8 @@
  *
  */
 class Filter_phone extends Filter_base {
-	public function filter(&$field, $options) {
+	public function filter(&$field,string $options = '') : void
+	{
 		/* this needs to be passed by reference */
 		$field = preg_replace('/[^0-9x]+/', ' ', $field);
 		$field = preg_replace('/ {2,}/', ' ', $field);

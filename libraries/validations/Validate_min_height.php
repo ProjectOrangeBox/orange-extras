@@ -11,18 +11,19 @@
  *
  */
 class Validate_min_height extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
+		if (!function_exists('getimagesize')) {
+			throw new Exception('Get Image Size Function Not Supported');
+		}
+
 		$this->error_string = 'Height is less than %s.';
 
 		if (!$file = $this->locate_file($field)) {
 			return false;
 		}
 
-		if (!function_exists('getimagesize')) {
-			throw new Exception('Get Image Size Function Not Supported');
-		}
-
-		$size = getimagesize($field);
+		$size = getimagesize($file);
 
 		return (bool) ($size[1] <= $options);
 	}

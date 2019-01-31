@@ -11,7 +11,8 @@
  *
  */
 class Validate_ends_with extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s must end with ' . $options;
 
 		return (bool) ($options == substr($field, -strlen($options)));

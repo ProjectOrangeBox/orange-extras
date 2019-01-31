@@ -11,7 +11,8 @@
  *
  */
 class Validate_array_between extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s should contain between ' . $min . ' and ' . $max . ' items.';
 
 		list($min, $max) = explode(',', $options, 2);

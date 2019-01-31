@@ -11,7 +11,8 @@
  *
  */
 class Validate_valid_dob extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$yrs                = ($options) ? $options : 18;
 		$this->error_string = '%s must be more than ' . $yrs . ' years.';
 

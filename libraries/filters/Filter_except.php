@@ -11,8 +11,11 @@
  *
  */
 class Filter_except extends Filter_base {
-	public function filter(&$field, $options) {
-		/* options is what is stripped "except" */
-		$field = preg_replace("/[^" . preg_quote($options, "/") . "]/", '', $field);
+	public function filter(&$field,string $options = '') : void
+	{
+		if (!empty($options)) {
+			/* options is what is stripped "except" */
+			$field = preg_replace("/[^" . preg_quote($options, "/") . "]/", '', $field);
+		}
 	}
 } /* end class */

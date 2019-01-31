@@ -11,7 +11,8 @@
  *
  */
 class Validate_is_after_date extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$format = 'F j,Y,g:ia';
 		$time   = strtotime('now');
 		$error  = 'now';

@@ -11,7 +11,8 @@
  *
  */
 class Validate_even extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is not a even number.';
 
 		return ((int) $field % 2 === 0);

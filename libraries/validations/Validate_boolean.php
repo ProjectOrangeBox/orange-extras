@@ -11,7 +11,8 @@
  *
  */
 class Validate_boolean extends Validate_base {
-	public function filter(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$field = strtolower($field);
 
 		return ($field == 'y' || $field == 'yes' || $field === 1 || $field == '1' || $field == 'true' || $field == 't');

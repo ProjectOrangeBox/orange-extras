@@ -11,7 +11,8 @@
  *
  */
 class Validate_filename extends Validate_base {
-	public function validate(&$field, $options) {
+	public function validate(&$field, string $options = '') : bool
+	{
 		$this->error_string = '%s is not a valid file name.';
 
 		return (bool) preg_match("/^[0-9a-zA-Z_\-. ]+$/i", $field);
