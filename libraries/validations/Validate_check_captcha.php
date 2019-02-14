@@ -10,7 +10,8 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Validate_check_captcha extends Validate_base {
+class Validate_check_captcha extends Validate_base
+{
 	public function validate(&$field, string $options = '') : bool
 	{
 		// !todo -- captcha

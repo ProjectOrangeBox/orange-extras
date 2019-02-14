@@ -10,8 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_xss_clean extends Filter_base {
-	public function filter(&$field,string $options = '') : void
+class Filter_xss_clean extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$field = ci()->security->xss_clean($field);
 	}

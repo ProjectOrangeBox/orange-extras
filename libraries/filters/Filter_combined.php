@@ -10,11 +10,12 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_combined extends Filter_base {
+class Filter_combined extends Filter_base
+{
 	/**
 	 * combined[{fielda},{fieldb},::,{fieldc}]
 	 */
-	public function filter(&$field,string $options = '') : void
+	public function filter(&$field, string $options = '') : void
 	{
 		$fields = explode(',', $options);
 

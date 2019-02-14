@@ -10,7 +10,8 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Validate_is_serialized_str extends Validate_base {
+class Validate_is_serialized_str extends Validate_base
+{
 	public function validate(&$field, string $options = '') : bool
 	{
 		$this->error_string = '%s must be a serialized string.';
@@ -36,14 +37,14 @@ class Validate_is_serialized_str extends Validate_base {
 				if (preg_match("/^{$badions[1]}:[0-9]+:.*[;}]\$/s", $field)) {
 					return true;
 				}
-			break;
-			case 'b':
+		break;
+		case 'b':
 			case 'i':
 			case 'd':
 				if (preg_match("/^{$badions[1]}:[0-9.E-]+;\$/", $field)) {
 					return true;
 				}
-			break;
+		break;
 		endswitch;
 
 		return false;

@@ -11,8 +11,9 @@
  * @help filter_replace[find,replace,find1,replace1]
  *
  */
-class Filter_replace extends Filter_base {
-	public function filter(&$field,string $options = '') : void
+class Filter_replace extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		/* built the key value pair */
 		$items  = explode(',', $options);

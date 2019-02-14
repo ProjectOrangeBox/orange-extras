@@ -10,8 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_encode_php_tags extends Filter_base {
-	public function filter(&$field,string $options = '') : void
+class Filter_encode_php_tags extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$field = str_replace(['<?', '?>'], ['&lt;?', '?&gt;'], $field);
 	}

@@ -10,9 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_array_implode extends Filter_base {
-	
-	public function filter(&$field,string $options = '') : void
+class Filter_array_implode extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$options = ($options) ? $options : ' ';
 
@@ -20,5 +20,4 @@ class Filter_array_implode extends Filter_base {
 			$field = implode($options, $field);
 		}
 	}
-
 } /* end class */

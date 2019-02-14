@@ -10,7 +10,8 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Validate_valid_dob extends Validate_base {
+class Validate_valid_dob extends Validate_base
+{
 	public function validate(&$field, string $options = '') : bool
 	{
 		$yrs                = ($options) ? $options : 18;

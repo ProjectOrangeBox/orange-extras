@@ -10,7 +10,8 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Validate_is_not extends Validate_base {
+class Validate_is_not extends Validate_base
+{
 	public function validate(&$field, string $options = '') : bool
 	{
 		$this->error_string = '%s is not valid.';

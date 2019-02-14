@@ -10,8 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_uppercase extends Filter_base {
-	public function filter(&$field,string $options = '') : void
+class Filter_uppercase extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$field = strtoupper($field);
 

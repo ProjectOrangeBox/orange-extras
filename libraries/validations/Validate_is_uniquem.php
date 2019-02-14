@@ -10,8 +10,8 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Validate_is_uniquem extends Validate_base {
-
+class Validate_is_uniquem extends Validate_base
+{
 	public function validate(&$field, string $options = '') : bool
 	{
 		/* is_uniquem[model_name.column_name.$_POST[primary_key]] */
@@ -36,5 +36,4 @@ class Validate_is_uniquem extends Validate_base {
 
 		return ci()->$model->is_uniquem($field, $column, $postkey);
 	}
-
 } /* end class */

@@ -10,8 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_strtotime extends Filter_base {
-	public function filter(&$field,string $options = '') : void
+class Filter_strtotime extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$field = strtotime($field);
 

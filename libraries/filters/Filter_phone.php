@@ -10,8 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_phone extends Filter_base {
-	public function filter(&$field,string $options = '') : void
+class Filter_phone extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		/* this needs to be passed by reference */
 		$field = preg_replace('/[^0-9x]+/', ' ', $field);

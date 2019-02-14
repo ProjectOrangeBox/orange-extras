@@ -10,8 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_lowercase extends Filter_base {
-	public function filter(&$field,string $options = '') : void
+class Filter_lowercase extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$field = strtolower($field);
 

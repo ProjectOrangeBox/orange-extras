@@ -10,7 +10,8 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Validate_file_size_max extends Validate_base {
+class Validate_file_size_max extends Validate_base
+{
 	public function validate(&$field, string $options = '') : bool
 	{
 		$this->error_string = 'File %s size is greater than ' . $options . ' bytes';

@@ -10,8 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_strip_tags extends Filter_base {
-	public function filter(&$field,string $options = '') : void
+class Filter_strip_tags extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$allowable_tags = (!empty($options)) ? $options : '';
 

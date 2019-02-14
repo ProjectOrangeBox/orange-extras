@@ -10,7 +10,8 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Validate_exists extends Validate_base {
+class Validate_exists extends Validate_base
+{
 	public function validate(&$field, string $options = '') : bool
 	{
 		/* exists[model_name.column] */

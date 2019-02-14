@@ -11,8 +11,9 @@
  * @help extracts datauri to path and returns url
  *
  */
-class Filter_datauri extends Validate {
-	public function filter(&$field,string $options = '') : void
+class Filter_datauri extends Validate
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$field = ci('data_uri')->extract_data_img($field);
 	}

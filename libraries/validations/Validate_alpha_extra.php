@@ -10,7 +10,8 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Validate_alpha_extra extends Validate_base {
+class Validate_alpha_extra extends Validate_base
+{
 	public function validate(&$field, string $options = '') : bool
 	{
 		// Alpha-numeric with periods,underscores,spaces and dashes

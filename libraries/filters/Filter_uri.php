@@ -10,8 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_uri extends Filter_base {
-	public function filter(&$field,string $options = '') : void
+class Filter_uri extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$field = '/' . trim(trim(strtolower($field)), '/');
 		$field = preg_replace("#^/^[0-9a-z_*/]*$#", '', $field);

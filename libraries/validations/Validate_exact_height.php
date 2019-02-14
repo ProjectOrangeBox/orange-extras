@@ -10,7 +10,8 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Validate_exact_height extends Validate_base {
+class Validate_exact_height extends Validate_base
+{
 	public function validate(&$field, string $options = '') : bool
 	{
 		if (!function_exists('getimagesize')) {

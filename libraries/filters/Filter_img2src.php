@@ -10,8 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_img2src extends Validate {
-	public function filter(&$field,string $options = '') : void
+class Filter_img2src extends Validate
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$column = (!empty($options)) ? $options : 'src';
 
@@ -19,5 +20,4 @@ class Filter_img2src extends Validate {
 			$field = $match[1];
 		}
 	}
-
 } /* end class */

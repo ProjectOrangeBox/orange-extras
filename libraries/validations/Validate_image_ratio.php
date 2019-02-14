@@ -10,7 +10,8 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Validate_image_ratio extends Validate_base {
+class Validate_image_ratio extends Validate_base
+{
 	/* options can be a number or a string like 4:3,16:9 */
 	public function validate(&$field, string $options = '') : bool
 	{

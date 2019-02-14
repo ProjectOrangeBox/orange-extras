@@ -10,11 +10,12 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_substr extends Filter_base {
+class Filter_substr extends Filter_base
+{
 	/**
 	 * copy[field]
 	 */
-	public function filter(&$field,string $options = '') : void
+	public function filter(&$field, string $options = '') : void
 	{
 		if (!empty($options)) {
 			list($a, $b) = explode($options, 2);

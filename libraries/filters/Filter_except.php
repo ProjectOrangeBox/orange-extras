@@ -10,8 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_except extends Filter_base {
-	public function filter(&$field,string $options = '') : void
+class Filter_except extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		if (!empty($options)) {
 			/* options is what is stripped "except" */

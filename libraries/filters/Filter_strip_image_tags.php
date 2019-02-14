@@ -10,8 +10,9 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_strip_image_tags extends Filter_base {
-	public function filter(&$field,string $options = '') : void
+class Filter_strip_image_tags extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$field = ci()->security->strip_image_tags($field);
 	}

@@ -10,11 +10,10 @@
  * @link	https://github.com/ProjectOrangeBox
  *
  */
-class Filter_bol2bol extends Filter_base {
-	
-	public function filter(&$field,string $options = '') : void
+class Filter_bol2bol extends Filter_base
+{
+	public function filter(&$field, string $options = '') : void
 	{
 		$field = (in_array(strtolower($field), $this->true_array, true)) ? true : false;
 	}
-
 } /* end class */
